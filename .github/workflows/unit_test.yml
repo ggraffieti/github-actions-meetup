@@ -1,0 +1,17 @@
+name: unit test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: build_sphinx_doc_deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: unit test
+        run: python -m unittest 
