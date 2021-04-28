@@ -25,42 +25,52 @@ Functions
 .. function:: addition(first_number, second_number, *other_numbers)
 
    Calculate the sum between two or more numbers
+
    :param first_number: the first numner to sum
    :param second_number: the second number to sum
    :param other_numbers: additional other numbers
+
    :return: the sum between the given numbers
 
 
 .. function:: multiplication(first_number, second_number, *other_numbers)
 
    Calculate the product between the given numbers
+
    :param first_number: the first number to multiply
    :param second_number: the second number to multiply
    :param other_numbers: additional numbers to multiply
+
    :return: the product between the given numbers
 
 
 .. function:: subtraction(first_number, second_number)
 
    Subtract the second number to the first number
+
    :param first_number: The base number
    :param second_number: The number to subtract to the base number
+
    :return: The subtraction between the two numbers
 
 
 .. function:: division(first_number, second_number)
 
    Calculate the division between the two numbers
+
    :param first_number: the divident
    :param second_number: the divisor
+
    :return: the quotient between the divident and the divisor
 
 
 .. function:: power(base, exponent)
 
    Calculate the power between the given base and exponent.
+
    :param base: the base of the power
    :param exponent: the exponent of the number
+
    :return: the power base^exponent
 
 
