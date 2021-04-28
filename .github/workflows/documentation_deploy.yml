@@ -1,0 +1,49 @@
+name: documentation compilation and deploynment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: build_sphinx_doc_deploy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: install sphinx
+        run: |
+          pip install sphinx
+          pip install sphinx-autoapi
+          pip install sphinx_rtd_theme
+      - name: compile documentation
+        run: |
+          sphinx-build -b dirhtml docs/ doc_html/
+      - name: Clone gh-pages branch
+        uses: actions/checkout@v2
+        with:
+          repository: 'ggraffieti/github-actions-meetup'
+          ref: 'gh-pages'
+          path: 'gh-pages'
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: commit to gh pages
+        run: |
+          cp -r doc_html/. gh-pages/
+          cd gh-pages
+          git config --local user.email ${{ secrets.EMAIL }}
+          git config --local user.name ${{ secrets.NAME }}
+          git add .
+          git commit -m "Update documentation" -a || true
+          # The above command will fail if no changes were present, so we ignore
+          # that.
+      - name: Push changes (deploy)
+        uses: ad-m/github-push-action@master
+        with:
+          branch: gh-pages
+          directory: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}

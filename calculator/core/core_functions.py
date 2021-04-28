@@ -1,6 +1,3 @@
-import math
-
-
 def addition(first_number, second_number, *other_numbers):
     """
     Calculate the sum between two or more numbers
