@@ -1,0 +1,15 @@
+:mod:`calculator.core`
+======================
+
+.. py:module:: calculator.core
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   core_functions/index.rst
+
+
