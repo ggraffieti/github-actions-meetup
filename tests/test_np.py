@@ -12,6 +12,10 @@ class BasicTest(unittest.TestCase):
         self.assertEqual(average([1, 2, 3]), 2)
         self.assertEqual(average([3]), 3)
 
+    def test_sum(self):
+        self.assertEqual(array_sum([1, 2, 3]), 6)
+        self.assertEqual(array_sum([3]), 3)
+
 
 if __name__ == "__main__":
     unittest.main()
