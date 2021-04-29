@@ -22,8 +22,7 @@ jobs:
           pip install sphinx-autoapi
           pip install sphinx_rtd_theme
       - name: compile documentation
-        run: |
-          sphinx-build -b dirhtml docs/ doc_html/
+        run: sphinx-build -b dirhtml docs/ doc_html/
       - name: Clone gh-pages branch
         uses: actions/checkout@v2
         with:

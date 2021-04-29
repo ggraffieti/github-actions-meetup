@@ -9,9 +9,9 @@ def addition(first_number, second_number, *other_numbers):
     :return: the sum between the given numbers
     """
     sum = first_number + second_number
-    for n in other_numbers: 
+    for n in other_numbers:
         sum += n
-    return sum 
+    return sum
 
 
 def multiplication(first_number, second_number, *other_numbers):
@@ -25,7 +25,7 @@ def multiplication(first_number, second_number, *other_numbers):
     :return: the product between the given numbers
     """
     product = first_number * second_number
-    for n in other_numbers: 
+    for n in other_numbers:
         product *= n
     return product
 
@@ -63,13 +63,13 @@ def power(base, exponent):
 
     :return: the power base^exponent
     """
-    if exponent == 0: 
+    if exponent == 0:
         return 1
-    if exponent == 1: 
+    if exponent == 1:
         return base
-    if exponent == 2: 
+    if exponent == 2:
         return multiplication(base, base)
-    else: 
+    else:
         return multiplication(base, power(base, exponent - 1))
 
 
@@ -92,7 +92,7 @@ def square_root(number):
         return guess
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     print(addition(5, 6, 9, 10))
     print(multiplication(5, 6))
     print(subtraction(5, 6))
