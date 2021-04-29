@@ -25,4 +25,20 @@ jobs:
       - name: install pycodestyle
         run: pip install pycodestyle
       - name: run pycodestyle
-        run: pycodestyle calculator
+        run: pycodestyle calculator > pep8_report.txt
+      - name: send PR message
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            var message = "Oh no! It seems there are some PEP8 errors! 😕\nDon't worry, you can fix them! 💪\nHere's a report about the errors and where you can find them:\n\n```\n"
+            var fs = require("fs");
+            var text = fs.readFileSync("pep8_report.txt", "utf-8");
+            var text_complete = message.concat(text, "\n```")
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: text_complete
+            })
