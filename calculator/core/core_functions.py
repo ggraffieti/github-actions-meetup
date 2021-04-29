@@ -74,13 +74,6 @@ def power(base, exponent):
 
 
 def square_root(number):
-    """
-    Calculate the square root of a positive number
-
-    :param number: The number
-
-    :return: the square root of the given number
-    """
     if number < 0:
         raise ArithmeticError("Square root of a negative number")
     if number == 0:
