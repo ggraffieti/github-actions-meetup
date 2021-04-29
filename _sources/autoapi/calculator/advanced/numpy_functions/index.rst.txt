@@ -1,0 +1,26 @@
+:mod:`calculator.advanced.numpy_functions`
+==========================================
+
+.. py:module:: calculator.advanced.numpy_functions
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   calculator.advanced.numpy_functions.list_to_numpy
+   calculator.advanced.numpy_functions.average
+
+
+
+.. function:: list_to_numpy(list_py)
+
+
+.. function:: average(array)
+
+

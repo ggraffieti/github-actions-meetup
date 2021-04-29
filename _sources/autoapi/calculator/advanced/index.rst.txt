@@ -1,0 +1,15 @@
+:mod:`calculator.advanced`
+==========================
+
+.. py:module:: calculator.advanced
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   numpy_functions/index.rst
+
+
