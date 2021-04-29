@@ -10,7 +10,6 @@ Subpackages
    :titlesonly:
    :maxdepth: 3
 
-   advanced/index.rst
    core/index.rst
 
 
