@@ -72,7 +72,6 @@ def power(base, exponent):
     else:
         return multiplication(base, power(base, exponent - 1))
 
-
 def square_root(number):
     """
     Calculate the square root of a positive number
