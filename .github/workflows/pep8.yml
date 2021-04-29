@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - master
+    paths:
+      - "calculator/**.py"
   pull_request:
     branches:
       - master
+    paths:
+      - "calculator/**.py"
 
 jobs:
   build:
