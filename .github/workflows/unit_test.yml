@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: build_sphinx_doc_deploy
+    name: unit test
     runs-on: ubuntu-latest
     defaults:
       run:
