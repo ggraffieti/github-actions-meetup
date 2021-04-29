@@ -17,7 +17,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: conda install
-        run: conda env create -f environment.yml
+        run: |
+          conda env create -f environment.yml
+          conda activate calculator
       - name: unit test
         run: |
           conda list
