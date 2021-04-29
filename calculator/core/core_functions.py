@@ -59,7 +59,7 @@ def power(base, exponent):
     Calculate the power between the given base and exponent.
 
     :param base: the base of the power
-    :param exponent: the exponent of the number
+    :param exponent: the exponent of the given number
 
     :return: the power base^exponent
     """
