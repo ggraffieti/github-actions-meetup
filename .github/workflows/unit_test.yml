@@ -9,6 +9,9 @@ jobs:
   build:
     name: build_sphinx_doc_deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       - uses: actions/checkout@v2
         with:
