@@ -23,5 +23,4 @@ jobs:
           auto-activate-base: false
       - name: unit test
         run: |
-          conda list
           python -m unittest
