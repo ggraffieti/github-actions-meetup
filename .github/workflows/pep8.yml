@@ -1,0 +1,28 @@
+name: pep8 check
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "calculator/**.py"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "calculator/**.py"
+
+jobs:
+  build:
+    name: check pep8
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.7-slim
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: install pycodestyle
+        run: pip install pycodestyle
+      - name: run pycodestyle
+        run: pycodestyle calculator
