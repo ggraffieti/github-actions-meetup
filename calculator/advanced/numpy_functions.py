@@ -12,6 +12,7 @@ def average(array):
         tmp_array = list_to_numpy(array)
         return tmp_array.mean()
 
+
 def array_sum(array):
     if isinstance(array, np.ndarray):
         return array.sum()
